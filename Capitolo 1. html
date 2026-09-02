@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Capitolo 1 — Economia neoclassica ed economia comportamentale (Studio)</title>
+  <style>
+    :root{
+      /* Pastelli */
+      --bg: #fbfbff;
+      --paper: #ffffff;
+      --ink: #1f2937;
+
+      --muted: #6b7280;
+      --line: #e5e7eb;
+
+      --lav: #ede9fe;      /* viola chiaro */
+      --sky: #e0f2fe;      /* azzurro chiaro */
+      --mint:#dcfce7;      /* verde menta */
+      --peach:#ffedd5;     /* pesca */
+      --rose:#ffe4e6;      /* rosa */
+      --butter:#fef9c3;    /* giallo pastello */
+
+      --accent:#7c3aed;    /* viola */
+      --accent2:#0284c7;   /* blu */
+      --ok:#16a34a;
+
+      --shadow: 0 10px 30px rgba(17,24,39,.08);
+      --radius: 16px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--ink);
+      background:
+        radial-gradient(1200px 700px at 10% 0%, var(--lav) 0%, transparent 45%),
+        radial-gradient(900px 600px at 90% 10%, var(--sky) 0%, transparent 48%),
+        radial-gradient(900px 600px at 60% 110%, var(--mint) 0%, transparent 45%),
+        var(--bg);
+      line-height:1.55;
+    }
+
+    a{color:var(--accent2); text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .wrap{
+      max-width: 1040px;
+      margin: 28px auto;
+      padding: 0 16px 40px;
+      display:grid;
+      grid-template-columns: 320px 1fr;
+      gap: 18px;
+      align-items:start;
+    }
+
+    @media (max-width: 980px){
+      .wrap{grid-template-columns:1fr}
+      .sidebar{position:relative; top:auto}
+    }
+
+    .card{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    header.hero{
+      grid-column: 1 / -1;
+      padding: 18px 18px 12px;
+    }
+
+    .title{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    }
+
+    .badge{
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      background: linear-gradient(135deg, var(--lav), var(--sky));
+      border:1px solid rgba(124,58,237,.15);
+      font-weight:800;
+      color: rgba(31,41,55,.85);
+    }
+
+    h1{
+      margin:0;
+      font-size: 22px;
+      letter-spacing:-0.01em;
+    }
+
+    .subtitle{
+      margin:6px 0 0;
+      color:var(--muted);
+      font-size: 14px;
+    }
+
+    .chips{
+      margin-top: 12px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+
+    .chip{
+      border:1px solid var(--line);
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:12px;
+      color: rgba(31,41,55,.8);
+      background: #fff;
+    }
+
+    .chip b{font-weight:700}
+
+    .sidebar{
+      position: sticky;
+      top: 18px;
+      padding: 14px;
+    }
+
+    .sidebar h2{
+      margin: 6px 0 10px;
+      font-size: 14px;
+      letter-spacing:.02em;
+      text-transform: uppercase;
+      color: rgba(31,41,55,.65);
+    }
+
+    .toc{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+
+    .toc a{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding: 9px 10px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      color: rgba(31,41,55,.9);
+      background: linear-gradient(180deg, #fff, #fff);
+    }
+
+    .toc a:hover{
+      border-color: rgba(2,132,199,.18);
+      background: linear-gradient(180deg, #fff, rgba(224,242,254,.35));
+      text-decoration:none;
+    }
+
+    .toc .n{
+      width:28px;
+      height:28px;
+      border-radius:10px;
+      flex:0 0 auto;
+      display:grid;
+      place-items:center;
+      font-weight:800;
+      font-size:12px;
+      background: var(--butter);
+      border:1px solid rgba(234,179,8,.18);
+      color: rgba(31,41,55,.85);
+    }
+
+    .toc .t{
+      font-size: 13px;
+      line-height:1.25;
+    }
+
+    main{
+      padding: 14px;
+    }
+
+    section{
+      padding: 16px;
+      margin-bottom: 14px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.9);
+    }
+
+    section h3{
+      margin: 0 0 10px;
+      font-size: 18px;
+      letter-spacing:-0.01em;
+    }
+
+    .grid2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 780px){
+      .grid2{grid-template-columns:1fr}
+    }
+
+    .box{
+      border-radius: 14px;
+      padding: 12px 12px 11px;
+      border:1px solid rgba(17,24,39,.08);
+      background: #fff;
+    }
+
+    .box h4{
+      margin:0 0 6px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing:.04em;
+      color: rgba(31,41,55,.65);
+    }
+
+    .key{
+      background: linear-gradient(180deg, rgba(237,233,254,.75), #fff);
+      border-color: rgba(124,58,237,.18);
+    }
+
+    .example{
+      background: linear-gradient(180deg, rgba(224,242,254,.75), #fff);
+      border-color: rgba(2,132,199,.18);
+    }
+
+    .newexample{
+      background: linear-gradient(180deg, rgba(255,237,213,.75), #fff);
+      border-color: rgba(234,88,12,.18);
+    }
+
+    .warn{
+      background: linear-gradient(180deg, rgba(255,228,230,.75), #fff);
+      border-color: rgba(244,63,94,.18);
+    }
+
+    .summary{
+      background: linear-gradient(180deg, rgba(220,252,231,.8), #fff);
+      border-color: rgba(22,163,74,.18);
+    }
+
+    .hl{
+      padding: .08em .35em;
+      border-radius: .6em;
+      background: rgba(254,249,195,.9);
+      border:1px solid rgba(234,179,8,.22);
+      font-weight:700;
+    }
+
+    ul{
+      margin: 8px 0 0;
+      padding-left: 18px;
+    }
+
+    .compare{
+      width:100%;
+      border-collapse: collapse;
+      overflow:hidden;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background:#fff;
+    }
+
+    .compare th, .compare td{
+      padding: 10px 10px;
+      border-bottom:1px solid var(--line);
+      vertical-align: top;
+      font-size: 14px;
+    }
+
+    .compare th{
+      background: linear-gradient(180deg, rgba(237,233,254,.65), rgba(224,242,254,.35));
+      text-align:left;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing:.04em;
+      color: rgba(31,41,55,.75);
+    }
+
+    .compare tr:last-child td{border-bottom:0}
+
+    .hr{
+      height:1px;
+      background: var(--line);
+      margin: 10px 0;
+    }
+
+    /* Flashcards a fisarmonica */
+    .flashcards details{
+      border:1px solid var(--line);
+      border-radius: 14px;
+      padding: 10px 12px;
+      background: #fff;
+      margin: 10px 0;
+      box-shadow: 0 6px 18px rgba(17,24,39,.06);
+    }
+
+    .flashcards summary{
+      cursor:pointer;
+      font-weight: 800;
+      color: rgba(31,41,55,.9);
+    }
+
+    .flashcards summary::marker{color: var(--accent)}
+    .flashcards p{margin: 8px 0 0; color: rgba(31,41,55,.86)}
+
+    .footerNote{
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header class="hero card">
+      <div class="title">
+        <div class="badge">C1</div>
+        <div>
+          <h1>Capitolo 1 — Economia neoclassica ed economia comportamentale</h1>
+          <p class="subtitle">
+            Versione HTML per lo studio: struttura chiara, concetti evidenziati, box visivi, esempi pratici + flashcards.
+          </p>
+        </div>
+      </div>
+      <div class="chips">
+        <span class="chip"><b>Obiettivo:</b> capire come descrivere e valutare le decisioni</span>
+        <span class="chip"><b>Parole chiave:</b> razionalità, descrittiva vs normativa, razionalità limitata</span>
+        <span class="chip"><b>Focus visivo:</b> box + evidenziazioni</span>
+      </div>
+    </header>
+
+    <aside class="sidebar card">
+      <h2>Indice rapido</h2>
+      <nav class="toc" aria-label="Tabella dei contenuti">
+        <a href="#s1"><span class="n">1</span><span class="t">Che cosa significa “razionalità”</span></a>
+        <a href="#s2"><span class="n">2</span><span class="t">Teoria descrittiva vs normativa</span></a>
+        <a href="#s3"><span class="n">3</span><span class="t">Che cos’è una scelta razionale</span></a>
+        <a href="#s4"><span class="n">4</span><span class="t">Economia neoclassica</span></a>
+        <a href="#s5"><span class="n">5</span><span class="t">Economia comportamentale</span></a>
+        <a href="#s6"><span class="n">6</span><span class="t">Herbert Simon e razionalità limitata</span></a>
+        <a href="#s7"><span class="n">7</span><span class="t">Differenze: neoclassica vs comportamentale</span></a>
+        <a href="#s8"><span class="n">8</span><span class="t">Perché servono entrambe</span></a>
+        <a href="#s9"><span class="n">9</span><span class="t">Idea centrale del capitolo</span></a>
+        <a href="#flashcards"><span class="n">★</span><span class="t">Flashcards (fisarmonica)</span></a>
+      </nav>
+      <p class="footerNote">
+        Suggerimento: mentre studi, prova a “vedere” ogni sezione come 3 blocchi:
+        <span class="hl">Concetto</span> → <span class="hl">Esempio</span> → <span class="hl">Perché conta</span>.
+      </p>
+    </aside>
+
+    <main class="card">
+      <!-- 1 -->
+      <section id="s1">
+        <h3>1) Che cosa significa “razionalità”</h3>
+        <div class="grid2">
+          <div class="box key">
+            <h4>Concetto chiave</h4>
+            <p>
+              Una persona è <span class="hl">razionale</span> quando sceglie in modo coerente con
+              <span class="hl">obiettivi</span> e <span class="hl">informazioni disponibili</span>.
+              (Non significa “perfetta”: significa “coerente”.)
+            </p>
+            <div class="hr"></div>
+            <p><b>Razionalità strumentale</b> = scegliere <span class="hl">i mezzi migliori</span> per uno scopo già dato.</p>
+          </div>
+
+          <div class="box example">
+            <h4>Esempio (dal testo)</h4>
+            <p>
+              Vuoi arrivare puntuale a lezione: scegli autobus/bici/auto.
+              La scelta è razionale se, con le info che hai, quel mezzo sembra il migliore per l’obiettivo.
+            </p>
+          </div>
+
+          <div class="box newexample">
+            <h4>Esempio nuovo (box visivo)</h4>
+            <p>
+              Vuoi studiare 2 ore senza distrazioni.
+              Metti il telefono in modalità aereo e prepari acqua e appunti prima di iniziare.
+              Non stai scegliendo “l’obiettivo giusto”, ma <span class="hl">lo strumento più adatto</span> per raggiungerlo.
+            </p>
+          </div>
+
+          <div class="box warn">
+            <h4>Occhio</h4>
+            <p>
+              La razionalità strumentale <span class="hl">non giudica</span> se l’obiettivo è “buono” o “sensato”.
+              Chiede solo: “dato l’obiettivo, qual è la scelta migliore?”
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2 -->
+      <section id="s2">
+        <h3>2) Teoria descrittiva e teoria normativa</h3>
+
+        <table class="compare" role="table" aria-label="Confronto tra teoria descrittiva e normativa">
+          <thead>
+            <tr>
+              <th>Teoria descrittiva</th>
+              <th>Teoria normativa</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Spiega <span class="hl">come</span> le persone decidono davvero.</td>
+              <td>Spiega <span class="hl">come dovrebbero</span> decidere per essere razionali.</td>
+            </tr>
+            <tr>
+              <td>Osserva comportamenti reali (anche con errori).</td>
+              <td>Propone regole/criteri di “buona decisione”.</td>
+            </tr>
+            <tr>
+              <td>Domanda: “Che cosa fanno?”</td>
+              <td>Domanda: “Che cosa dovrebbero fare?”</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="grid2" style="margin-top:12px;">
+          <div class="box example">
+            <h4>Esempio (dal testo)</h4>
+            <p>
+              Al supermercato molti scelgono il prodotto all’altezza degli occhi anche se non è il più economico:
+              la descrittiva spiega <span class="hl">perché accade</span>.
+            </p>
+          </div>
+          <div class="box newexample">
+            <h4>Esempio nuovo (box visivo)</h4>
+            <p>
+              Devi scegliere un corso opzionale.<br>
+              <b>Normativa:</b> confronta programma, crediti, valutazione, tempo richiesto.<br>
+              <b>Descrittiva:</b> nota che spesso si sceglie perché “lo fanno amicə” o perché il nome suona interessante.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3 -->
+      <section id="s3">
+        <h3>3) Che cos’è una scelta razionale</h3>
+        <div class="grid2">
+          <div class="box key">
+            <h4>Concetto chiave</h4>
+            <p>
+              Una scelta è razionale quando selezioni l’opzione per cui hai <span class="hl">le ragioni migliori</span>
+              <b>con le informazioni che possiedi in quel momento</b>.
+            </p>
+            <ul>
+              <li>coerente con obiettivi</li>
+              <li>coerente con preferenze</li>
+              <li>coerente con info disponibili</li>
+            </ul>
+          </div>
+          <div class="box example">
+            <h4>Esempio (dal testo)</h4>
+            <p>
+              Scegli un ristorante pensando sia il miglior rapporto qualità/prezzo.
+              Poi scopri che ce n’era uno migliore: non per forza eri irrazionale, mancava quell’informazione.
+            </p>
+          </div>
+          <div class="box newexample">
+            <h4>Esempio nuovo (box visivo)</h4>
+            <p>
+              Comprerai un laptop in saldo perché “sembra il migliore” tra quelli che hai visto in 30 minuti.
+              Se dopo scopri un’offerta migliore, non significa che la scelta fosse sbagliata:
+              era la migliore <span class="hl">dato il tempo e le info</span>.
+            </p>
+          </div>
+          <div class="box warn">
+            <h4>Trucco mentale</h4>
+            <p>
+              Valuta la razionalità guardando <span class="hl">il momento della decisione</span>, non solo il risultato finale.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4 -->
+      <section id="s4">
+        <h3>4) Economia neoclassica</h3>
+        <div class="grid2">
+          <div class="box key">
+            <h4>Concetto chiave</h4>
+            <p>
+              L’economia neoclassica usa un modello di decisore <span class="hl">razionale</span>:
+              confronta alternative e sceglie quella migliore per i propri obiettivi.
+            </p>
+            <p>
+              Considera la teoria della scelta razionale:
+              <span class="hl">normativamente corretta</span> e spesso <span class="hl">descrittivamente adeguata</span>.
+            </p>
+          </div>
+          <div class="box example">
+            <h4>Esempio (dal testo)</h4>
+            <p>
+              Offerte telefoniche: raccogli info, confronti prezzi/caratteristiche, valuti preferenze, scegli la migliore.
+            </p>
+          </div>
+          <div class="box newexample">
+            <h4>Esempio nuovo (box visivo)</h4>
+            <p>
+              Devi scegliere il tragitto casa–università.<br>
+              In versione “neoclassica”, confronti tempi medi, costo, affidabilità,
+              e scegli il percorso con <span class="hl">massima utilità</span> per te (es. più veloce o più economico).
+            </p>
+          </div>
+          <div class="box warn">
+            <h4>Idea implicita</h4>
+            <p>
+              Le deviazioni dalla razionalità sono viste come <span class="hl">limitate</span> o poco importanti.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5 -->
+      <section id="s5">
+        <h3>5) Economia comportamentale</h3>
+        <div class="grid2">
+          <div class="box key">
+            <h4>Concetto chiave</h4>
+            <p>
+              Studia come le persone decidono <span class="hl">davvero</span> e mostra deviazioni dalla razionalità:
+              <span class="hl">ampie</span>, <span class="hl">sistematiche</span>, <span class="hl">prevedibili</span>.
+            </p>
+            <ul>
+              <li>info incomplete</li>
+              <li>tempo/attenzione limitati</li>
+              <li>stanchezza/emozioni</li>
+              <li>come sono presentate le alternative</li>
+              <li>ambiente di scelta</li>
+            </ul>
+          </div>
+          <div class="box example">
+            <h4>Esempio (dal testo)</h4>
+            <p>
+              Acquisto computer: invece di confrontare tutto, guardi solo alcuni modelli,
+              segui un consiglio, scegli il più caro pensando sia migliore, decidi in fretta.
+            </p>
+          </div>
+          <div class="box newexample">
+            <h4>Esempio nuovo (box visivo)</h4>
+            <p>
+              In biblioteca scegli il posto “vicino alla finestra” anche se è più rumoroso,
+              perché ti dà una sensazione positiva e “ti sembra” più produttivo.
+              La scelta è influenzata dal <span class="hl">contesto</span>, non solo da calcoli.
+            </p>
+          </div>
+          <div class="box warn">
+            <h4>Memoria visiva</h4>
+            <p>
+              Pensa all’economia comportamentale come a una lente che cerca
+              <span class="hl">pattern ripetuti</span> di errori/scorciatoie mentali.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6 -->
+      <section id="s6">
+        <h3>6) Herbert Simon e la razionalità limitata</h3>
+        <div class="grid2">
+          <div class="box key">
+            <h4>Concetto chiave</h4>
+            <p>
+              Le decisioni avvengono con <span class="hl">risorse limitate</span> (info, tempo, attenzione, calcolo).
+              Quindi spesso non troviamo “il migliore in assoluto”, ma una soluzione <span class="hl">soddisfacente</span>.
+            </p>
+            <p><b>Parola chiave:</b> <span class="hl">satisficing</span> = abbastanza buona.</p>
+          </div>
+
+          <div class="box example">
+            <h4>Esempio (dal testo)</h4>
+            <p>
+              Casa in affitto: stabilisci requisiti (prezzo max, zona, dimensione, collegamenti) e ti fermi quando li trovi.
+            </p>
+          </div>
+
+          <div class="box newexample">
+            <h4>Esempio nuovo (box visivo)</h4>
+            <p>
+              Devi scegliere un metodo di studio per un esame imminente.<br>
+              Invece di testare 10 tecniche, scegli quella che:
+              (1) capisci subito, (2) riesci a fare oggi, (3) ti dà risultati “ok”.  
+              È una scelta <span class="hl">soddisfacente</span> sotto vincoli di tempo.
+            </p>
+          </div>
+
+          <div class="box warn">
+            <h4>Interpretazione corretta</h4>
+            <p>
+              Non è “pigrizia”: spesso è una strategia pratica per non consumare troppe energie.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7 -->
+      <section id="s7">
+        <h3>7) Differenza tra economia neoclassica e comportamentale</h3>
+        <table class="compare" role="table" aria-label="Differenze tra economia neoclassica e comportamentale">
+          <thead>
+            <tr>
+              <th>Neoclassica</th>
+              <th>Comportamentale</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Parte dal modello del decisore razionale.</td>
+              <td>Studia il decisore reale.</td>
+            </tr>
+            <tr>
+              <td>Suppone scelta dell’opzione migliore.</td>
+              <td>Spesso scelta di soluzioni soddisfacenti.</td>
+            </tr>
+            <tr>
+              <td>Deviazioni limitate.</td>
+              <td>Deviazioni ampie/sistematiche/prevedibili.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="grid2" style="margin-top:12px;">
+          <div class="box newexample">
+            <h4>Esempio nuovo (box visivo)</h4>
+            <p>
+              Stai scegliendo un abbonamento palestra.<br>
+              <b>Neoclassica:</b> confronti prezzo, distanza, attrezzi, orari → scegli “migliore” per te.<br>
+              <b>Comportamentale:</b> ti iscrivi dove va amicə o dove c’è una promo “solo oggi” → scelta influenzata dal frame.
+            </p>
+          </div>
+          <div class="box key">
+            <h4>Mini-sintesi</h4>
+            <p>
+              Neoclassica = <span class="hl">ideale di razionalità</span><br>
+              Comportamentale = <span class="hl">realtà delle decisioni</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8 -->
+      <section id="s8">
+        <h3>8) Perché servono sia descrittivo che normativo?</h3>
+        <div class="grid2">
+          <div class="box key">
+            <h4>Concetto chiave</h4>
+            <p>
+              Non sono nemiche: si <span class="hl">completano</span>.
+            </p>
+            <ul>
+              <li><b>Descrittivo:</b> capisci cosa succede davvero e dove si sbaglia</li>
+              <li><b>Normativo:</b> hai uno standard per valutare e migliorare</li>
+            </ul>
+          </div>
+
+          <div class="box example">
+            <h4>Esempio (dal testo)</h4>
+            <p>
+              Se molti non leggono contratti lunghi, puoi semplificare le info (descrittivo),
+              ma serve anche sapere “cosa sarebbe razionale fare” (normativo).
+            </p>
+          </div>
+
+          <div class="box newexample">
+            <h4>Esempio nuovo (box visivo)</h4>
+            <p>
+              Studiare per un esame:<br>
+              <b>Normativo:</b> “pianifica, distribuisci nel tempo, fai esercizi mirati”.<br>
+              <b>Descrittivo:</b> nota che spesso si procrastina o si ripete lettura passiva.<br>
+              Insieme: capisci <span class="hl">cosa dovresti fare</span> e <span class="hl">perché non lo fai</span>.
+            </p>
+          </div>
+
+          <div class="box warn">
+            <h4>Schema mentale</h4>
+            <p>
+              Normativo = “<span class="hl">mappa</span>”<br>
+              Descrittivo = “<span class="hl">strada vera</span> con buche e deviazioni”
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9 -->
+      <section id="s9">
+        <h3>9) L’idea centrale del capitolo</h3>
+        <div class="grid2">
+          <div class="box summary">
+            <h4>Messaggio finale</h4>
+            <p>
+              Le persone cercano di decidere razionalmente, ma non sempre riescono in modo perfetto:
+              ci sono <span class="hl">limiti</span> di tempo, informazioni e attenzione.
+            </p>
+            <ul>
+              <li>Neoclassica: definisce la scelta razionale (standard)</li>
+              <li>Comportamentale: spiega deviazioni reali</li>
+              <li>Simon: razionalità limitata → soluzioni soddisfacenti</li>
+              <li>Serve sia normativa che descrittiva</li>
+            </ul>
+          </div>
+
+          <div class="box newexample">
+            <h4>Esempio nuovo (box visivo)</h4>
+            <p>
+              Quando devi prendere molte decisioni in un giorno (studio, commissioni, messaggi),
+              la qualità delle scelte può calare: non perché “non vuoi”, ma perché
+              hai <span class="hl">risorse cognitive limitate</span>.
+              Qui vedi insieme: modello razionale (ideale) + limiti reali (comportamentale/Simon).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flashcards -->
+      <section id="flashcards" class="flashcards">
+        <h3>Flashcards (fisarmonica)</h3>
+
+        <details>
+          <summary>Che cosa significa “razionalità” in generale?</summary>
+          <p>Coerenza tra scelta, obiettivi e informazioni disponibili in quel momento.</p>
+        </details>
+
+        <details>
+          <summary>Cos’è la razionalità strumentale?</summary>
+          <p>Scegliere i mezzi migliori per raggiungere uno scopo già dato (non giudica lo scopo).</p>
+        </details>
+
+        <details>
+          <summary>Descrittiva vs Normativa: differenza in una frase?</summary>
+          <p>Descrittiva: come decidiamo davvero. Normativa: come dovremmo decidere per essere razionali.</p>
+        </details>
+
+        <details>
+          <summary>Che cos’è una scelta razionale?</summary>
+          <p>La scelta per cui hai le ragioni migliori, dato ciò che sapevi al momento (non “perfetta a posteriori”).</p>
+        </details>
+
+        <details>
+          <summary>Economia neoclassica: ipotesi centrale?</summary>
+          <p>Decisore prevalentemente razionale che confronta alternative e sceglie l’opzione migliore per i propri obiettivi.</p>
+        </details>
+
+        <details>
+          <summary>Economia comportamentale: cosa mostra?</summary>
+          <p>Deviazioni dalla razionalità spesso ampie, sistematiche e prevedibili (influenze di contesto, limiti, emozioni).</p>
+        </details>
+
+        <details>
+          <summary>Herbert Simon: razionalità limitata significa…?</summary>
+          <p>Decidere con risorse limitate (tempo/info/attenzione): spesso si cerca una soluzione soddisfacente, non la migliore assoluta.</p>
+        </details>
+
+        <details>
+          <summary>Perché servono sia descrittivo che normativo?</summary>
+          <p>Normativo dà lo standard; descrittivo spiega cosa succede davvero e perché sbagliamo: insieme aiutano a migliorare.</p>
+        </details>
+
+        <p class="footerNote">
+          Consiglio: prova a ripetere le flashcards “a vista” (senza leggere la risposta) e poi apri solo per controllare.
+        </p>
+      </section>
+
+    </main>
+  </div>
+</body>
+</html>
